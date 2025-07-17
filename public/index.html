@@ -49,12 +49,9 @@
         <section id="about" class="about-us">
             <div class="container">
                 <h3>Про нашу ферму</h3>
-                <p>
-                    Наша ферма розташована в екологічно чистому районі. Ми дбаємо про наших індиків, забезпечуючи їм вільний вигул та харчування виключно натуральними кормами без антибіотиків та стимуляторів росту. Саме тому наше м'ясо таке ніжне, смачне та корисне.
-                </p>
+                <p>Наша ферма розташована в екологічно чистому районі. Ми дбаємо про наших індиків, забезпечуючи їм вільний вигул та харчування виключно натуральними кормами без антибіотиків та стимуляторів росту. Саме тому наше м'ясо таке ніжне, смачне та корисне.</p>
             </div>
         </section>
-
         <section id="products" class="products">
             <div class="container">
                 <h3>Наша Продукція</h3>
@@ -80,7 +77,6 @@
                 </div>
             </div>
         </section>
-
         <section id="contacts" class="contacts">
             <div class="container">
                 <h3>Як замовити?</h3>
@@ -105,32 +101,23 @@
     </audio>
 
     <button id="sound-toggle-btn">
-        <i class="bi bi-volume-mute-fill"></i>
-    </button>
+        <i class="bi bi-music-note-beamed"></i> </button>
     
     <script>
         const music = document.getElementById('backgroundMusic');
         const soundBtn = document.getElementById('sound-toggle-btn');
         const soundOnIcon = '<i class="bi bi-volume-up-fill"></i>';
-        const soundOffIcon = '<i class="bi bi-volume-mute-fill"></i>';
-
-        let hasInteracted = false; // Прапорець для відстеження першого кліку
+        const soundOffIcon = '<i class="bi bi-pause-fill"></i>'; // Змінено на "паузу"
 
         soundBtn.addEventListener('click', () => {
-            // Якщо це перший клік, запускаємо музику
-            if (!hasInteracted) {
-                music.play().then(() => {
-                    // Якщо відтворення почалося успішно
-                    music.muted = false; // Вмикаємо звук
-                    soundBtn.innerHTML = soundOnIcon;
-                    hasInteracted = true; // Позначаємо, що взаємодія відбулася
-                }).catch(error => {
-                    console.error("Помилка відтворення при першому запуску:", error);
-                });
+            // Якщо музика на паузі, запускаємо її
+            if (music.paused) {
+                music.play().catch(error => console.error("Помилка відтворення:", error));
+                soundBtn.innerHTML = soundOffIcon; // Показуємо іконку паузи
             } else {
-                // Якщо музика вже грає, просто вмикаємо/вимикаємо звук
-                music.muted = !music.muted;
-                soundBtn.innerHTML = music.muted ? soundOffIcon : soundOnIcon;
+                // Якщо музика грає, ставимо на паузу
+                music.pause();
+                soundBtn.innerHTML = soundOnIcon; // Показуємо іконку "грати"
             }
         });
     </script>
