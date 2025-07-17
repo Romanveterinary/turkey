@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ферма Індиків - Свіже м'ясо та тушки</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     
@@ -52,24 +52,25 @@
                 <p>Наша ферма розташована в екологічно чистому районі. Ми дбаємо про наших індиків, забезпечуючи їм вільний вигул та харчування виключно натуральними кормами без антибіотиків та стимуляторів росту. Саме тому наше м'ясо таке ніжне, смачне та корисне.</p>
             </div>
         </section>
+
         <section id="products" class="products">
             <div class="container">
                 <h3>Наша Продукція</h3>
                 <div class="products-grid">
                     <div class="product-card">
-                        <img src="images/turkey-carcass.jpg" alt="Тушка індички">
+                        <img src="assets/images/turkey-carcass.jpg" alt="Тушка індички">
                         <h4>Тушка індички (охолоджена)</h4>
                         <p>Ідеально підходить для запікання на святковий стіл. Вага 8-25 кг.</p>
                         <div class="price">Ціна: 150 грн/кг</div>
                     </div>
                     <div class="product-card">
-                        <img src="images/turkey-fillet.jpg" alt="Філе індички">
+                        <img src="assets/images/turkey-fillet.jpg" alt="Філе індички">
                         <h4>Філе індички</h4>
                         <p>Ніжне дієтичне м'ясо, чудово смакує у будь-яких стравах.</p>
                         <div class="price">Ціна: 250 грн/кг</div>
                     </div>
                     <div class="product-card">
-                        <img src="images/turkey-leg.jpg" alt="Гомілка індички">
+                        <img src="assets/images/turkey-leg.jpg" alt="Гомілка індички">
                         <h4>Гомілка індички</h4>
                         <p>Соковите м'ясо, яке ідеально підходить для тушкування та запікання.</p>
                         <div class="price">Ціна: 145 грн/кг</div>
@@ -77,6 +78,7 @@
                 </div>
             </div>
         </section>
+
         <section id="contacts" class="contacts">
             <div class="container">
                 <h3>Як замовити?</h3>
@@ -97,29 +99,28 @@
     </footer>
 
     <audio id="backgroundMusic" loop>
-      <source src="background-music.mp3" type="audio/mpeg">
+      <source src="assets/background-music.mp3" type="audio/mpeg">
     </audio>
 
     <button id="sound-toggle-btn">
-        <i class="bi bi-music-note-beamed"></i> </button>
+        <i class="bi bi-music-note-beamed"></i> 
+    </button>
     
     <script>
         const music = document.getElementById('backgroundMusic');
         const soundBtn = document.getElementById('sound-toggle-btn');
         const soundOnIcon = '<i class="bi bi-volume-up-fill"></i>';
-        const soundOffIcon = '<i class="bi bi-pause-fill"></i>'; // Змінено на "паузу"
+        const soundOffIcon = '<i class="bi bi-pause-fill"></i>';
 
         soundBtn.addEventListener('click', () => {
-            // Якщо музика на паузі, запускаємо її
             if (music.paused) {
-                music.play().catch(error => console.error("Помилка відтворення:", error));
-                soundBtn.innerHTML = soundOffIcon; // Показуємо іконку паузи
+                music.play().catch(error => console.error("Playback error:", error));
+                soundBtn.innerHTML = soundOffIcon;
             } else {
-                // Якщо музика грає, ставимо на паузу
                 music.pause();
-                soundBtn.innerHTML = soundOnIcon; // Показуємо іконку "грати"
+                soundBtn.innerHTML = soundOnIcon;
             }
         });
     </script>
-    </body>
+</body>
 </html>
