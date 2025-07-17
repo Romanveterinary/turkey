@@ -10,11 +10,21 @@
     
     <style>
         #sound-toggle-btn {
-            position: fixed; bottom: 20px; right: 20px;
-            width: 50px; height: 50px; border-radius: 50%;
-            background-color: #007bff; color: white; border: none;
-            font-size: 24px; display: flex; align-items: center;
-            justify-content: center; cursor: pointer; z-index: 1000;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
     </style>
@@ -35,14 +45,12 @@
                 <a href="#contacts" class="cta-button">Зробити замовлення</a>
             </div>
         </section>
-
         <section id="about" class="about-us">
             <div class="container">
                 <h3>Про нашу ферму</h3>
                 <p>Наша ферма розташована в екологічно чистому районі. Ми дбаємо про наших індиків, забезпечуючи їм вільний вигул та харчування виключно натуральними кормами без антибіотиків та стимуляторів росту. Саме тому наше м'ясо таке ніжне, смачне та корисне.</p>
             </div>
         </section>
-
         <section id="products" class="products">
             <div class="container">
                 <h3>Наша Продукція</h3>
@@ -68,7 +76,6 @@
                 </div>
             </div>
         </section>
-
         <section id="contacts" class="contacts">
             <div class="container">
                 <h3>Як замовити?</h3>
@@ -93,24 +100,27 @@
     </audio>
 
     <button id="sound-toggle-btn">
-        <i class="bi bi-music-note-beamed"></i> 
+        <i class="bi bi-play-fill"></i>
     </button>
     
     <script>
         const music = document.getElementById('backgroundMusic');
         const soundBtn = document.getElementById('sound-toggle-btn');
-        const soundOnIcon = '<i class="bi bi-volume-up-fill"></i>';
-        const soundOffIcon = '<i class="bi bi-pause-fill"></i>';
+        const playIcon = '<i class="bi bi-play-fill"></i>';
+        const pauseIcon = '<i class="bi bi-pause-fill"></i>';
 
         soundBtn.addEventListener('click', () => {
             if (music.paused) {
-                music.play().catch(error => console.error("Playback error:", error));
-                soundBtn.innerHTML = soundOffIcon;
+                music.play().catch(e => console.error("Error playing audio:", e));
+                // *** ОСНОВНА ЗМІНА: Примусово вмикаємо звук ***
+                music.muted = false; 
+                soundBtn.innerHTML = pauseIcon;
             } else {
                 music.pause();
-                soundBtn.innerHTML = soundOnIcon;
+                soundBtn.innerHTML = playIcon;
             }
         });
     </script>
+
 </body>
 </html>
