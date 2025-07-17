@@ -114,8 +114,6 @@
         const soundOnIcon = '<i class="bi bi-volume-up-fill"></i>';
         const soundOffIcon = '<i class="bi bi-volume-mute-fill"></i>';
 
-        // Намагаємось запустити відтворення (деякі браузери вимагають цього)
-        // Гарантії, що це спрацює з увімкненим звуком, немає
         music.play().catch(error => console.log("Autoplay was prevented.", error));
 
         soundBtn.addEventListener('click', () => {
