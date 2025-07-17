@@ -1,0 +1,139 @@
+/* Загальні стилі для всього сайту */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f7f3;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Шапка сайту */
+header {
+    background-color: #4a6c3a;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Секція: Головний екран */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/farm-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #d4a373;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #b38656;
+}
+
+/* Загальні стилі для секцій */
+section {
+    padding: 60px 0;
+}
+
+section h3 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+/* Секція "Про нас" */
+.about-us {
+    background-color: #ffffff;
+    text-align: center;
+}
+.about-us p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Секція "Продукція" */
+.products-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.product-card h4 {
+    font-size: 1.4em;
+    margin: 15px 0 10px;
+}
+
+.product-card .price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #4a6c3a;
+    margin-top: 15px;
+}
+
+/* Секція "Контакти" */
+.contacts {
+    background-color: #e9e3d8;
+    text-align: center;
+}
+.contact-info p {
+    font-size: 1.2em;
+    margin: 15px 0;
+}
+.contact-info .phone {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Підвал */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
