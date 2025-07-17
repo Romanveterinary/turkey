@@ -100,7 +100,7 @@
         </div>
     </footer>
 
-    <audio id="backgroundMusic" autoplay muted loop>
+    <audio id="backgroundMusic" loop>
       <source src="background-music.mp3" type="audio/mpeg">
     </audio>
 
@@ -114,17 +114,25 @@
         const soundOnIcon = '<i class="bi bi-volume-up-fill"></i>';
         const soundOffIcon = '<i class="bi bi-volume-mute-fill"></i>';
 
-        music.play().catch(error => console.log("Autoplay was prevented.", error));
+        let hasInteracted = false; // Прапорець для відстеження першого кліку
 
         soundBtn.addEventListener('click', () => {
-            if (music.muted) {
-                music.muted = false;
-                soundBtn.innerHTML = soundOnIcon;
+            // Якщо це перший клік, запускаємо музику
+            if (!hasInteracted) {
+                music.play().then(() => {
+                    // Якщо відтворення почалося успішно
+                    music.muted = false; // Вмикаємо звук
+                    soundBtn.innerHTML = soundOnIcon;
+                    hasInteracted = true; // Позначаємо, що взаємодія відбулася
+                }).catch(error => {
+                    console.error("Помилка відтворення при першому запуску:", error);
+                });
             } else {
-                music.muted = true;
-                soundBtn.innerHTML = soundOffIcon;
+                // Якщо музика вже грає, просто вмикаємо/вимикаємо звук
+                music.muted = !music.muted;
+                soundBtn.innerHTML = music.muted ? soundOffIcon : soundOnIcon;
             }
         });
     </script>
-</body>
+    </body>
 </html>
