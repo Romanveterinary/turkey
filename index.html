@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ферма "Подільська Індичка" | М'ясо індички | Хмельницький</title>
+    <meta name="description" content="ТОВ 'Рости Добро' - ферма індиків у Хмельницькому регіоні (с. Малашівці). Пропонуємо свіже, екологічно чисте м'ясо індички: тушки, філе, гомілки. Доставка та самовивіз.">
+    <meta name="keywords" content="ферма індиків, індичка Хмельницький, купити індичку, свіже м'ясо птиці, Рости Добро, Малашівці">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
+    <style>
+        #sound-toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .call-button-floating {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: transform 0.2s ease-in-out;
+        }
+        .call-button-floating:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        /* --- ОНОВЛЕНІ СТИЛІ ДЛЯ СЕКЦІЇ ПРОДУКЦІЇ --- */
+        .products {
+            /* Встановлюємо НОВЕ фонове зображення - трава */
+            background-image: url('https://images.pexels.com/photos/413195/pexels-photo-413195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+            background-size: cover; /* Розтягуємо зображення */
+            background-position: center center; /* Центруємо */
+            background-attachment: fixed; /* Ефект паралаксу */
+            padding: 60px 0;
+            position: relative; /* Потрібно для шару затемнення */
+        }
+        
+        /* Шар затемнення для кращої читабельності заголовка */
+        .products::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.2); /* Зробимо затемнення трохи світлішим */
+            z-index: 1;
+        }
+
+        /* Робимо так, щоб контент був над шаром затемнення */
+        .products .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Заголовок секції робимо білим, щоб його було видно на фоні */
+        .products h3 {
+             color: white;
+             text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+
+        .products .product-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        /* --- КІНЕЦЬ ОНОВЛЕНИХ СТИЛІВ --- */
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>ТОВ "Рости Добро"</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Свіжа та натуральна індичка прямо з ферми</h2>
+                <p>Вирощено з любов'ю на натуральних кормах</p>
+                <a href="#contacts" class="cta-button">Зробити замовлення</a>
+            </div>
+        </section>
+
+        <section id="about" class="about-us">
+            <div class="container">
+                <h3>Про нашу ферму</h3>
+                <p>Наша ферма розташована в екологічно чистому районі. Ми дбаємо про наших індиків, забезпечуючи їм вільний вигул та харчування виключно натуральними кормами без антибіотиків та стимуляторів росту. Саме тому наше м'ясо таке ніжне, смачне та корисне.</p>
+            </div>
+        </section>
+        
+        <section id="products" class="products">
+            <div class="container">
+                <h3>Наша Продукція</h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/turkey-carcass.jpg" alt="Тушка індички">
+                        <h4>Тушка індички (охолоджена)</h4>
+                        <p>Ідеально підходить для запікання на святковий стіл. Вага 8-25 кг.</p>
+                        <div class="price">Ціна: 160 грн/кг</div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/turkey-fillet.jpg" alt="Філе індички">
+                        <h4>Філе індички</h4>
+                        <p>Ніжне дієтичне м'ясо, чудово смакує у будь-яких стравах.</p>
+                        <div class="price">Ціна: 260 грн/кг</div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/turkey-leg.jpg" alt="Гомілка індички">
+                        <h4>Гомілка індички</h4>
+                        <p>Соковите м'ясо, яке ідеально підходить для тушкування та запікання.</p>
+                        <div class="price">Ціна: 150 грн/кг</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contacts" class="contacts">
+            <div class="container">
+                <h3>Як замовити?</h3>
+                <p>Щоб зробити замовлення або дізнатися деталі, зателефонуйте нам!</p>
+                <div class="contact-info">
+                    <p class="phone">📞 Телефон: <a href="tel:+380777555707">+380 (077) 755 57 07</a></p>
+                    <p class="address">📍 Наша адреса: с. Малашівці, вул. Польова, 1 (можливий самовивіз)</p>
+                    <p class="delivery">🚚 Доставка по місту (уточнюйте по телефону)</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ТОВ "Рости Добро". Всі права захищено.</p>
+        </div>
+    </footer>
+
+    <a href="tel:+380777555707" class="call-button-floating" aria-label="Зателефонувати зараз">
+        <i class="bi bi-telephone-fill"></i>
+    </a>
+
+    <audio id="backgroundMusic" loop>
+      <source src="https://files.catbox.moe/8wb77x.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="sound-toggle-btn">
+        <i class="bi bi-play-fill"></i>
+    </button>
+    
+    <script>
+        const music = document.getElementById('backgroundMusic');
+        const soundBtn = document.getElementById('sound-toggle-btn');
+        const playIcon = '<i class="bi bi-play-fill"></i>';
+        const pauseIcon = '<i class="bi bi-pause-fill"></i>';
+
+        soundBtn.addEventListener('click', () => {
+            if (music.paused) {
+                music.play().catch(e => console.error("Error playing audio:", e));
+                music.muted = false;
+                soundBtn.innerHTML = pauseIcon;
+            } else {
+                music.pause();
+                soundBtn.innerHTML = playIcon;
+            }
+        });
+    </script>
+    </body>
+</html>
